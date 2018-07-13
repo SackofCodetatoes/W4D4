@@ -9,8 +9,25 @@
   </head>
 
   <body>
+  <header>
+    <h1>Napster2</h1>
+  </header>
+  <br><br>
+<div class="user_info">
+  <% if current_user %>
+    <form action=" <%= session_url %> " method="post">
+      <input type="hidden" name="_method" value="delete">
+        <%= auth_code %>
+      <a> <%= current_user.email %> </a>
+      <input type="submit" value="Logout">
+    </form>
+  <% else %>
     <a href=" <%= new_session_url %> ">Login!</a>
     <a href=" <%= new_user_url %> ">Sign Up!</a>
+  <% end %>
+</div>
+
+
     <%= yield %>
   </body>
 </html>

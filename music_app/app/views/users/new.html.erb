@@ -1,16 +1,16 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<h1>Create new user</h1>
+
 
 <form class="" action=" <%= users_url %> " method="post">
-  <label>Email: </label>
-  <input type="text" name="users[email]"> <br>
-  <label>Password: </label>
-  <input type="password" name="users[password]"> <br>
-  <input type="submit" value="Create Account!">
 
-  <input
-   name="authenticity_token"
-   type="hidden"
-   value="<%= form_authenticity_token %>">
-   
+  <!-- <input
+  name="authenticity_token"
+  type="hidden"
+  value="<%= form_authenticity_token %>"> -->
+  <%= auth_code %>
+  <label>Email: </label>
+  <input type="text" name="user[email]"> <br>
+  <label>Password: </label>
+  <input type="password" name="user[password]"> <br>
+  <input type="submit" value="Create Account!">
 </form>
